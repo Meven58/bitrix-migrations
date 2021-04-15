@@ -1,7 +1,7 @@
-[![Latest Stable Version](https://poser.pugx.org/arrilot/bitrix-migrations/v/stable.svg)](https://packagist.org/packages/arrilot/bitrix-migrations/)
-[![Total Downloads](https://img.shields.io/packagist/dt/arrilot/bitrix-migrations.svg?style=flat)](https://packagist.org/packages/Arrilot/bitrix-migrations)
-[![Build Status](https://img.shields.io/travis/arrilot/bitrix-migrations/master.svg?style=flat)](https://travis-ci.org/arrilot/bitrix-migrations)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/arrilot/bitrix-migrations/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/arrilot/bitrix-migrations/)
+[![Latest Stable Version](https://poser.pugx.org/meven58/bitrix-migrations/v/stable.svg)](https://packagist.org/packages/arrilot/bitrix-migrations/)
+[![Total Downloads](https://img.shields.io/packagist/dt/meven58/bitrix-migrations.svg?style=flat)](https://packagist.org/packages/Arrilot/bitrix-migrations)
+[![Build Status](https://img.shields.io/travis/meven58/bitrix-migrations/master.svg?style=flat)](https://travis-ci.org/arrilot/bitrix-migrations)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/meven58/bitrix-migrations/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/arrilot/bitrix-migrations/)
 
 # Bitrix-migrations
 
@@ -9,9 +9,9 @@
 
 ## Установка
 
-1) `composer require arrilot/bitrix-migrations`
+1) `composer require meven58/bitrix-migrations`
 
-2) `cp vendor/arrilot/bitrix-migrations/migrator migrator` - копируем исполняемый файл в удобное место.
+2) `cp vendor/meven58/bitrix-migrations/migrator migrator` - копируем исполняемый файл в удобное место.
 
 3) заходим внутрь и удостоверяемся что задается правильный $_SERVER['DOCUMENT_ROOT']. Меняем настройки если нужно
 
