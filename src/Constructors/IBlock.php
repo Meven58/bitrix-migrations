@@ -67,7 +67,7 @@ class IBlock
      */
     public function constructDefault($name, $code, $iblock_type_id)
     {
-        return $this->setName($name)->setCode($code)->setIblockTypeId($iblock_type_id);
+        return $this->setName($name)->setCode($code)->setIblockTypeId($iblock_type_id)->setRightAllUser();
     }
 
     /**
@@ -82,6 +82,48 @@ class IBlock
         return $this;
     }
 
+    public function setRequiredFieldsElement($required = true)
+    {
+        if ($required) {
+            $this->fields['FIELDS']['CODE'] = [
+                "IS_REQUIRED" => "Y", // Обязательное
+                "DEFAULT_VALUE" => [
+                    "UNIQUE" => "Y", // Проверять на уникальность
+                    "TRANSLITERATION" => "Y", // Транслитерировать
+                    "TRANS_LEN" => "30", // Максмальная длина транслитерации
+                    "TRANS_CASE" => "L", // Приводить к нижнему регистру
+                    "TRANS_SPACE" => "-", // Символы для замены
+                    "TRANS_OTHER" => "-",
+                    "TRANS_EAT" => "Y",
+                    "USE_GOOGLE" => "N",
+                ],
+            ];
+        }
+
+        return $this;
+    }
+
+    public function setRequiredFieldsSection($required = true)
+    {
+        if ($required) {
+            $this->fields['FIELDS']['SECTION_CODE'] = [
+                "IS_REQUIRED" => "Y", // Обязательное
+                "DEFAULT_VALUE" => [
+                    "UNIQUE" => "Y", // Проверять на уникальность
+                    "TRANSLITERATION" => "Y", // Транслитерировать
+                    "TRANS_LEN" => "30", // Максмальная длина транслитерации
+                    "TRANS_CASE" => "L", // Приводить к нижнему регистру
+                    "TRANS_SPACE" => "-", // Символы для замены
+                    "TRANS_OTHER" => "-",
+                    "TRANS_EAT" => "Y",
+                    "USE_GOOGLE" => "N",
+                ],
+            ];
+        }
+
+        return $this;
+    }
+
     /**
      * Символьный идентификатор.
      * @param string $code
@@ -90,6 +132,18 @@ class IBlock
     public function setCode($code)
     {
         $this->fields['CODE'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Устанавливаем права для всех пользователей
+     * @param string $right
+     * @return $this
+     */
+    public function setRightAllUser($right = 'R')
+    {
+        $this->fields['GROUP_ID'] = ['2' => $right];
 
         return $this;
     }

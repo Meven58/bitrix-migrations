@@ -60,6 +60,42 @@ class IBlockProperty
     }
 
     /**
+     * Поиск ID свойства по названию
+     * @param string $name
+     * @param int $iblock
+     * @return int
+     */
+    public static function getIdFromName(string $name, int $iblock): ?int
+    {
+        \Bitrix\Main\Loader::includeModule('iblock');
+
+        $prop = \Bitrix\Iblock\PropertyTable::getList([
+            'filter' => ['=NAME' => $name, '=IBLOCK_ID' => $iblock],
+            'select' => ['ID']
+        ])->fetch();
+
+        return $prop['ID'];
+    }
+
+    /**
+     * Поиск ID свойства по коду
+     * @param string $name
+     * @param int $iblock
+     * @return int
+     */
+    public static function getIdFromCode(string $code, int $iblock): ?int
+    {
+        \Bitrix\Main\Loader::includeModule('iblock');
+
+        $prop = \Bitrix\Iblock\PropertyTable::getList([
+            'filter' => ['=CODE' => $code, '=IBLOCK_ID' => $iblock],
+            'select' => ['ID']
+        ])->fetch();
+
+        return $prop['ID'];
+    }
+
+    /**
      * Установить настройки для добавления свойства инфоблока по умолчанию
      * @param string $code
      * @param string $name
