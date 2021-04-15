@@ -1,5 +1,5 @@
 {
-  "name": "arrilot/bitrix-migrations",
+  "name": "meven/bitrix-migrations",
   "license": "MIT",
   "description": "Database migrations for Bitrix CMS",
   "keywords": [
@@ -8,11 +8,11 @@
   ],
   "authors": [
     {
-      "name": "Nekrasov Ilya",
-      "email": "nekrasov.ilya90@gmail.com"
+      "name": "Dyachenko Vladislav",
+      "email": "vlad@meven.ru"
     }
   ],
-  "homepage": "https://github.com/Arrilot/bitrix-migrations",
+  "homepage": "https://github.com/Meven58/bitrix-migrations",
   "require": {
     "php": ">=5.5.0",
     "symfony/console": "~2|~3|~4",
