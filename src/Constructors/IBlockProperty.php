@@ -118,6 +118,46 @@ class IBlockProperty
 
         return $this;
     }
+    
+
+    /**
+     * Показывать свойство в карточке
+     * @param string $code
+     * @return $this
+     */
+    public function setDetailShow($param = true)
+    {
+        if ($param) {
+            $this->fields['FEATURES'][] = [
+                'IS_ENABLED'=>'Y',
+                'MODULE_ID'=>'iblock',
+                'FEATURE_ID'=>'DETAIL_PAGE_SHOW'
+            ];
+        }
+        
+
+        return $this;
+    }
+
+
+    /**
+     * Показывать свойство в списке
+     * @param string $code
+     * @return $this
+     */
+    public function setListShow($param = true)
+    {
+        if ($param) {
+            $this->fields['FEATURES'][] = [
+                'IS_ENABLED'=>'Y',
+                'MODULE_ID'=>'iblock',
+                'FEATURE_ID'=>'LIST_PAGE_SHOW'
+            ];
+        }
+        
+
+        return $this;
+    }
 
     /**
      * Внешний код.
